@@ -103,11 +103,7 @@ final_data = enriched_data.select(
     "distance_to_destination"
 )
 
-final_data.writeStream \
-    .format("console") \
-    .outputMode("append") \
-    .option("truncate", "false") \
-    .start()
+
 
 # Write enriched data with distances to Cassandra
 final_data.writeStream \
